@@ -16,8 +16,7 @@ bazelisk
 
 # gazelle
 go install github.com/bazelbuild/bazel-gazelle/cmd/gazelle@latest
-
-
+$env:PATH += ";$env:USERPROFILE\go\bin"
 
 # https://github.com/bazelbuild/rules_go#initial-project-setup
 
