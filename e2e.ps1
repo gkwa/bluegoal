@@ -14,7 +14,6 @@ if (-not $env:APPVEYOR) {
 # install bazel wrapper
 choco --no-progress install bazelisk
 
-
 # install bazel
 bazelisk
 
@@ -24,7 +23,7 @@ $env:PATH += ";$env:USERPROFILE\go\bin"
 
 # https://github.com/bazelbuild/rules_go#initial-project-setup
 
-cd $env:USERPROFILE\bluegoal
+# cd $env:USERPROFILE\bluegoal
 
 @'
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
@@ -48,5 +47,5 @@ go_register_toolchains(version = "1.20.7")
 bazel run :bluegoal
 bazel shutdown
 
-cd $env:USERPROFILE
-Remove-Item -Force -Recurse $env:USERPROFILE\bluegoal
+cd ..
+Remove-Item -Force -Recurse bluegoal
