@@ -1,0 +1,4 @@
+learn how to use bazel to build go app using this tutorial
+
+https://medium.com/@patrickkoss/bazel-in-action-a-journey-through-efficient-builds-in-go-a0be96978cfb
+
