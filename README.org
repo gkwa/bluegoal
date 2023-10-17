@@ -1,4 +1,15 @@
-learn how to use bazel to build go app using this tutorial
+#+begin_example
+$zipUrl = "https://github.com/taylormonacelli/bluegoal/archive/refs/heads/master.zip"
+$destinationFolder = "."
+New-Item -ItemType Directory -Force -Path $destinationFolder
+Invoke-WebRequest -Uri $zipUrl -OutFile "$destinationFolder\master.zip"
+Expand-Archive -Path "$destinationFolder\master.zip" -DestinationPath $destinationFolder
+Remove-Item "$destinationFolder\master.zip"
+cd bluegoal-master
+./deps.ps1
 
-https://medium.com/@patrickkoss/bazel-in-action-a-journey-through-efficient-builds-in-go-a0be96978cfb
-
+cd ..
+git clone https://github.com/taylormonacelli/bluegoal
+cd bluegoal
+./e2e.ps1
+#+end_example
