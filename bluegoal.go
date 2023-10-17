@@ -1,10 +1,8 @@
 package bluegoal
 
-import (
-	"log/slog"
-)
+import "fmt"
 
 func Main() int {
-	slog.Debug("bluegoal", "test", true)
+	fmt.Println("hello")
 	return 0
 }
