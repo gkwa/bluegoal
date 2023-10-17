@@ -45,5 +45,7 @@ go_register_toolchains(version = "1.20.7")
 bazel run :bluegoal
 bazel shutdown
 
+Start-Sleep -Seconds 5
+
 cd $env:USERPROFILE
 Remove-Item -Force -Recurse $env:USERPROFILE\bluegoal\WORKSPACE
