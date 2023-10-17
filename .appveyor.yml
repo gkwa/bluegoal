@@ -10,4 +10,3 @@ on_failure:
 install: []
 build_script:
 - ps: ./e2e.ps1
-
