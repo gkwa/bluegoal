@@ -3,7 +3,6 @@ image:
 - Visual Studio 2022
 init:
 - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-- ps: python --version
 on_failure:
 - ps: choco install --no-progress vscode
 - ps: $blockrdp = $true; iex ((new-object net.webclient).downloadstring('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
