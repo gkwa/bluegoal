@@ -1,15 +1,15 @@
 # golang
-choco install golang
+choco --no-progress install golang
 $env:PATH+=';C:\Program Files\Go\bin'
 go version
 
 # git
-choco install git
+choco --no-progress install git
 $env:PATH += ";C:\Program Files\Git\bin"
 git --version
 
 # install bazel wrapper
-choco install bazelisk
+choco --no-progress install bazelisk
 
 # install bazel
 bazelisk
