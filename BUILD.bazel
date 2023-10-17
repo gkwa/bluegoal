@@ -1,0 +1,8 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "bluegoal",
+    srcs = ["bluegoal.go"],
+    importpath = "github.com/taylormonacelli/bluegoal",
+    visibility = ["//visibility:public"],
+)
