@@ -47,5 +47,7 @@ $env:PATH += ";$env:USERPROFILE\go\bin"
 
 # cd $env:USERPROFILE\bluegoal
 
+gazelle -go_prefix github.com/taylormonacelli/bluegoal
+
 bazel run :bluegoal
 bazel shutdown
