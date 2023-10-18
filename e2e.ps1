@@ -47,11 +47,5 @@ $env:PATH += ";$env:USERPROFILE\go\bin"
 
 # cd $env:USERPROFILE\bluegoal
 
-
-
-
 bazel run :bluegoal
 bazel shutdown
-
-cd ..
-Remove-Item -Force -Recurse bluegoal
