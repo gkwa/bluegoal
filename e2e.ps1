@@ -13,9 +13,10 @@ if (-not $env:APPVEYOR) {
 
 # install bazel wrapper
 choco install bazelisk --no-progress 
+$env:PATH += ";C:\ProgramData\chocolatey\bin"
 
 # install bazel
-$result = &C:\ProgramData\chocolatey\bin\bazelisk.exe
+$result = &bazelisk
 
 Write-Host $result
 
