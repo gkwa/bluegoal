@@ -10,6 +10,9 @@ if (-not $env:APPVEYOR) {
     git --version
 }
 
+
+# https://github.com/bazelbuild/rules_go/releases/tag/v0.42.0
+
 @'
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
