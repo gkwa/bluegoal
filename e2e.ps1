@@ -1,11 +1,11 @@
 if (-not $env:APPVEYOR) {
     # golang
-    choco install golang --no-progress
+    choco install --no-progress golang
     $env:PATH+=';C:\Program Files\Go\bin'
     go version
 
     # git
-    choco install git --no-progress
+    choco install --no-progress git
     $env:PATH += ";C:\Program Files\Git\bin"
     git --version
 }
@@ -30,7 +30,7 @@ go_register_toolchains(version = "1.20.7")
 '@ | Out-File -Encoding ASCII WORKSPACE
 
 # install bazel wrapper
-choco install bazelisk  --progress
+choco install --no-progress bazelisk
 $env:PATH += ";C:\ProgramData\chocolatey\bin"
 
 # install bazel
