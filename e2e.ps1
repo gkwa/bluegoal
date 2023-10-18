@@ -1,3 +1,5 @@
+Set-PSDebug -Trace 1
+
 if (-not $env:APPVEYOR) {
     # golang
     choco install --no-progress golang
