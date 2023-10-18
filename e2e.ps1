@@ -44,7 +44,7 @@ load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_depe
 go_rules_dependencies()
 
 go_register_toolchains(version = "1.20.7")
-'@ | Out-File -Encoding ASCII $env:USERPROFILE\bluegoal\WORKSPACE
+'@ | Out-File -Encoding ASCII WORKSPACE
 
 bazel run :bluegoal
 bazel shutdown
