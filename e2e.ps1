@@ -1,4 +1,4 @@
-Set-PSDebug -Trace 1
+# Set-PSDebug -Trace 1
 
 if (-not $env:APPVEYOR) {
     # golang
@@ -54,4 +54,5 @@ $env:PATH += ";$env:USERPROFILE\go\bin"
 gazelle -go_prefix github.com/taylormonacelli/bluegoal
 
 bazel run :bluegoal
+bazel build :bluegoal
 bazel shutdown
