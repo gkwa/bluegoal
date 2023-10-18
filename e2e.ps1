@@ -11,23 +11,6 @@ if (-not $env:APPVEYOR) {
 }
 
 
-# install bazel wrapper
-choco install bazelisk --no-progress 
-$env:PATH += ";C:\ProgramData\chocolatey\bin"
-
-# install bazel
-$result = &bazelisk
-
-Write-Host $result
-
-# gazelle
-go install github.com/bazelbuild/bazel-gazelle/cmd/gazelle@latest
-$env:PATH += ";$env:USERPROFILE\go\bin"
-
-# https://github.com/bazelbuild/rules_go#initial-project-setup
-
-# cd $env:USERPROFILE\bluegoal
-
 @'
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -46,6 +29,26 @@ go_rules_dependencies()
 
 go_register_toolchains(version = "1.20.7")
 '@ | Out-File -Encoding ASCII WORKSPACE
+
+# install bazel wrapper
+choco install bazelisk --no-progress 
+$env:PATH += ";C:\ProgramData\chocolatey\bin"
+
+# install bazel
+$result = &bazelisk
+
+Write-Host $result
+
+# gazelle
+go install github.com/bazelbuild/bazel-gazelle/cmd/gazelle@latest
+$env:PATH += ";$env:USERPROFILE\go\bin"
+
+# https://github.com/bazelbuild/rules_go#initial-project-setup
+
+# cd $env:USERPROFILE\bluegoal
+
+
+
 
 bazel run :bluegoal
 bazel shutdown
