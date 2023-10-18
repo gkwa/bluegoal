@@ -15,7 +15,9 @@ if (-not $env:APPVEYOR) {
 choco install bazelisk --no-progress 
 
 # install bazel
-C:\ProgramData\chocolatey\bin\bazelisk.exe
+$result = &C:\ProgramData\chocolatey\bin\bazelisk.exe
+
+Write-Host $result
 
 # gazelle
 go install github.com/bazelbuild/bazel-gazelle/cmd/gazelle@latest
